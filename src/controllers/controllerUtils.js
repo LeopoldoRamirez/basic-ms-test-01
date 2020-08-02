@@ -6,6 +6,7 @@
  */
 function buildResponse( response, statudCode, body ){
     response.status(statudCode).json(body);
+    return response;
 }
 
 
