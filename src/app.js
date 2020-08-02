@@ -1,5 +1,8 @@
 const express = require('express');
 const router = require('./routers/index.route');
+const { appPort } = require('./config');
+
+require('./database');
 
 async function init(){
     
@@ -12,10 +15,9 @@ async function init(){
     //routes
     app.use(router);    
 
-    app.listen( 3000, ()=>{
-        console.log('Application is running');
+    app.listen( appPort, ()=>{        
+        console.log( `Application is running on port ${appPort} ` );
     });
-
 }
 
 

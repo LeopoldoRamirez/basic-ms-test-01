@@ -1,46 +1,49 @@
+const { buildResponse } = require('./controllerUtils');
+ 
 
 const getAllNotes = async( request, response )=>{
-    return response.json( [] );
-}
-
-const getNoteById = async( request, response ) =>{
-    const id = request.params.id || "";
-
-    console.log( `ID to find is ${id}`);
-
-    return response.json({ name: "foo", id  });
-
-}
-
-
-const saveNote = async( request, response) =>{
-    const note = request.body;
-
-    console.log("saving note ", note );
-
-    note.id = 100;
-
-    return response.status(201).json( note );
-
-}
-
-const updateNote = async(request, response )=>{
-    const id = request.params.id;
-    const note = request.body;
-
-
-    note.isUpdated = true;
-
-    return response.status(200).json(note);
-}
-
-const deleteNote = async(request, response )=>{
-    const id = request.params.id;
-    const msg  = `note with id ${id} was deleted`;
     
-    return response.status(200).json({ msg });
+    try {
+        return buildResponse( response, 200, [] );
+    } catch (error) {
+        return buildResponse( response, 500, {} ); ;    
+    }
+
 }
 
+const getNoteById = async(request, response)=>{
+    try {
+        return buildResponse( response, 200, { msg: "get note by id" } );
+    } catch (error) {
+        return buildResponse( response, 500, {} ); ;    
+    }
+}
+
+
+const saveNote = async( request, response )=>{
+    try {
+        return buildResponse( response, 201, {msg:"note saved"} );
+    } catch (error) {
+        return buildResponse( response, 500, {} ); ;    
+    }
+}
+
+const updateNote = async(request, response)=>{
+    try {
+        return buildResponse( response, 200, {msg: "note updated"} );
+    } catch (error) {
+        return buildResponse( response, 500, {} ); ;    
+    }
+}
+
+
+const deleteNote = async( request, response )=>{
+    try {
+        return buildResponse( response, 200, { msg: "note deleted" } );
+    } catch (error) {
+        return buildResponse( response, 500, {} ); ;    
+    }
+}
 
 module.exports = {
     getAllNotes,
