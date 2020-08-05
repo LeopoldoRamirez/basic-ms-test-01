@@ -39,6 +39,7 @@ const updateNote = async(request, response)=>{
 
 const deleteNote = async( request, response )=>{
     try {
+        
         return buildResponse( response, 200, { msg: "note deleted" } );
     } catch (error) {
         return buildResponse( response, 500, {} ); ;    
