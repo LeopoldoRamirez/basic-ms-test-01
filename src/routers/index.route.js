@@ -7,7 +7,8 @@ router.use('/notes', noteRouter);
 
 //default route must be the last one
 router.get('/', (request, response) => {
-    response.send('First microservice application with Node JS');
+    const welcomeMessage = process.env.APP_MESSAGE;
+    response.send( welcomeMessage );
 });
 
 

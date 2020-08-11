@@ -1,8 +1,8 @@
 # TO USE IN CLOUD
-#FROM node:10-alpine
+FROM node:10-alpine
 
 # TO USE IN DEV
-FROM node:10-buster
+#FROM node:10-buster
 
 WORKDIR /usr/src/app
 

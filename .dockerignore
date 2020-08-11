@@ -1,4 +1,8 @@
 node_modules
+dist
+build
+development
+.env
 .git
 .gitignore
 Dockerfile
