@@ -1,11 +1,10 @@
 node_modules
-dist
-build
-development
 .env
 .git
 .gitignore
 Dockerfile
-docker-yml
+docker-compose-yml
 .dockerignore
+development_files
 README.md
+documentation

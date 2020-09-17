@@ -1,5 +1,5 @@
 node_modules
 dist
-development
+development_files
 build
 .env

@@ -9,3 +9,4 @@ module.exports = {
     appPort : process.env.APPLICATION_PORT || 8080,
     appMessage : process.env.APP_MESSAGE || "Message not set"
 }
+s
